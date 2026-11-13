@@ -1,0 +1,5 @@
+ROOT_STATUS 200
+ROOT_CT text/html; charset=utf-8
+ROOT_HAS_TITLE True
+HEALTH 200 {"status":"ok"}
+ASSETS 200 []

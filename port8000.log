@@ -1,0 +1,13 @@
+ForEach-Object : Cannot overwrite variable PID because 
+it is read-only or constant.
+At line:1 char:84
++ ... yContinue | ForEach-Object { $pid = 
+$_.OwningProcess; Write-Output "P ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (PID:String) 
+    [ForEach-Object], SessionStateUnauthorizedAccessE  
+  xception
+    + FullyQualifiedErrorId : VariableNotWritable,Micr 
+   osoft.PowerShell.Commands.ForEachObjectCommand
+ 

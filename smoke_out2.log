@@ -1,0 +1,184 @@
+ROOT_STATUS 200
+ROOT_CT text/html; charset=utf-8
+ROOT_HAS_TITLE True
+HEALTH 200 {"status":"ok"}
+Traceback (most recent call last):
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 213, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 373, in _handle_exception
+    raise error
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 195, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: no such column: devices.consent_given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\_smoke.py", line 20, in <module>
+    asyncio.run(main())
+  File "C:\Users\disla\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\_smoke.py", line 16, in main
+    a = await c.get("/api/v1/assets?limit=50")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\httpx\_transports\asgi.py", line 170, in handle_async_request
+    await self.app(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 1780, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 2789, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 1800, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 1279, in handle
+    await app(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\app\api\routes.py", line 107, in list_assets
+    result = await session.scalars(select(Asset).order_by(Asset.created_at.desc()).limit(limit))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 561, in scalars
+    result = await self.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 448, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 213, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 373, in _handle_exception
+    raise error
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 195, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\disla\OneDrive\Documentos\PROJECTO VSCOD\RASTREIO\.venv\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: devices.consent_given
+[SQL: SELECT devices.id, devices.name, devices.imei, devices.mac_address, devices.cell_id, devices.phone_number, devices.device_type, devices.active, devices.created_at, devices.consent_given, devices.consent_obtained_at, devices.consent_revoked_at, devices.anonymized, devices.anonymized_at 
+FROM devices ORDER BY devices.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: (50, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
